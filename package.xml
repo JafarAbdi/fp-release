@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
+<package format="3">
+  <name>fp</name>
+  <version>100.0.0</version>
+  <description>FP extensions for C++</description>
+  <maintainer email="squirrel428@pm.me">Tyler Weaver</maintainer>
+
+  <license>BSD-3-Clause</license>
+
+  <url type="website">https://fplib.dev</url>
+  <url type="repository">http://www.github.com/tylerjw/fp</url>
+  <url type="bugtracker">http://www.github.com/tylerjw/fp/issues</url>
+  <author>Tyler Weaver</author>
+  <author email="squirrel428@pm.me">Tyler Weaver</author>
+
+  <buildtool_depend>ament_cmake</buildtool_depend>
+
+  <depend>fmt</depend>
+  <depend>range-v3</depend>
+
+  <test_depend>ament_cmake_gtest</test_depend>
+  <test_depend>ament_lint_auto</test_depend>
+  <test_depend>ament_lint_common</test_depend>
+
+  <export>
+    <build_type>ament_cmake</build_type>
+  </export>
+</package>
