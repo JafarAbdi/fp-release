@@ -14,7 +14,7 @@ tracks:
       :{release_inc} --os-name fedora
     - git-bloom-generate -y rosrpm --prefix release/:{ros_distro} :{ros_distro} -i
       :{release_inc} --os-name rhel
-    devel_branch: pr-humble_fixes
+    devel_branch: main
     last_version: 100.0.1
     name: upstream
     patches: null
