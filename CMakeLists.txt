@@ -14,18 +14,16 @@ find_package(ament_cmake REQUIRED)
 find_package(fmt REQUIRED)
 find_package(range-v3 REQUIRED)
 
-add_library(${PROJECT_NAME} src/result.cpp)
-target_include_directories(${PROJECT_NAME} PUBLIC
+add_library(${PROJECT_NAME} INTERFACE)
+target_include_directories(${PROJECT_NAME} INTERFACE
   $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
   $<INSTALL_INTERFACE:${CMAKE_INSTALL_INCLUDEDIR}>)
-target_compile_features(${PROJECT_NAME} PUBLIC cxx_std_17)
+target_compile_features(${PROJECT_NAME} INTERFACE cxx_std_17)
 target_link_libraries(${PROJECT_NAME}
-  PUBLIC
+  INTERFACE
     fmt
     range-v3
 )
-set_target_properties(${PROJECT_NAME} PROPERTIES
-  POSITION_INDEPENDENT_CODE ON)
 
 add_subdirectory(examples)
 
@@ -43,7 +41,7 @@ install(
 ament_export_include_directories(include)
 ament_export_targets(${PROJECT_NAME}Targets)
 ament_export_dependencies(fmt)
-ament_export_dependencies(range-v3) # TODO(sjahr) Re-enable once it does not cause cmake errors
+ament_export_dependencies(range-v3)
 
 if(BUILD_TESTING)
   find_package(ament_lint_auto REQUIRED)
